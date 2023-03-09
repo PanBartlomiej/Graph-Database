@@ -1,0 +1,21 @@
+CREATE (:FILM {tytuł:"Skazani na Shawshank",wydany:1994,gatunek:"Dramat",produkcja:"USA"})
+
+CREATE (:AKTOR {imie:"Morgan",nazwisko:"Freeman",urodzony:date("1937-06-01"),kraj:"USA",wzrost:188})
+CREATE (:AKTOR {imie:"Bob",nazwisko:"Gunton",urodzony:date("1945-11-15"),kraj:"USA",wzrost:188})
+
+CREATE (wp:FILM {tytuł:"Władca pierścieni: Powrót króla",wydany:2003,gatunek:"Fantasy",produkcja:"Nowa Zelandia"})
+CREATE (frodo:AKTOR {imie:"Elijah",nazwisko:"Wood",urodzony:date("1981-01-28"),kraj:"USA",wzrost:168})
+CREATE (aragorn:AKTOR {imie:"Viggo", nazwisko:"Mortensen",urodzony:date("1958-10-20"),kraj:"USA",wzrost:180})
+CREATE (gandalf:AKTOR {imie:"Ian",nazwisko:"McKellen",urodzony:date("1939-05-25"),kraj:"Wielka Brytania",wzrost:180})
+CREATE (legolas:AKTOR {imie:"Orlando",nazwisko:"Bloom",urodzony:date("1977-01-13"),kraj:"Wielka Brytania",wzrost:179})
+CREATE (elrond:AKTOR {imie:"Hugo",nazwisko:"Weaving",urodzony:date("1960-04-04"),kraj:"Nigeria",wzrost:188})
+CREATE (pj:REŻYSER:SCENARZYSTA{imie:"Peter",nazwisko:"Jackson",urodzony:date("1961-10-31"),kraj:"Nowa Zelandia",wzrost:169})
+CREATE (fw:SCENARZYSTA{imie:"FRAN",nazwisko:"Walsh",urodzony:date("1959-01-10"),kraj:"Nowa Zelandia",wzrost:null})
+CREATE (frodo)-[:ZAGRAŁ {rola:"Frodo Baggins"}]->(wp),
+	(aragorn)-[:ZAGRAŁ {rola:"Aragorn"}]->(wp),
+	(gandalf)-[:ZAGRAŁ {rola:"Gandalf"}]->(wp),
+	(legolas)-[:ZAGRAŁ {rola:"Legolas"}]->(wp),
+	(elrond)-[:ZAGRAŁ {rola:"Elrond"}]->(wp),
+	(pj)-[:WYREŻYSEROWAŁ]->(wp),
+	(pj)-[:SCENARIUSZ]->(wp),
+	(fw)-[:SCENARIUSZ]->(wp)
